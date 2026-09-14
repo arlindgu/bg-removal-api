@@ -1,0 +1,7 @@
+tunnel: <TUNNEL_ID>
+credentials-file: /home/pi/.cloudflared/<TUNNEL_ID>.json
+
+ingress:
+  - hostname: api.yourdomain.com
+    service: http://localhost:8000
+  - service: http_status:404

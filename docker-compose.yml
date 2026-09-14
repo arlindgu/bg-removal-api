@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      - DATABASE_URL=sqlite:////data/data.db
+    volumes:
+      - model-cache:/root/.rembg
+      - db-data:/data
+
+volumes:
+  model-cache:
+  db-data:
